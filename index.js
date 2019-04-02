@@ -73,6 +73,17 @@ exports.start = function (options) {
       if (options.device) {
         cmdArgs.unshift('-D', options.device)
       }
+    // PulseAudio
+    case 'parec':
+      cmd = 'parec'
+      cmdArgs = [
+        '--rate', options.sampleRate,   // sample rate
+        '--channels', options.channels, // channels
+        '--format', 's16le',            // sample format
+      ]
+      if (options.device) {
+        cmdArgs.unshift('--device', options.device)
+      }
       break
   }
 
