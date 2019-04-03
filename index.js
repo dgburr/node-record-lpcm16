@@ -73,6 +73,7 @@ exports.start = function (options) {
       if (options.device) {
         cmdArgs.unshift('-D', options.device)
       }
+      break
     // PulseAudio
     case 'parec':
       cmd = 'parec'
